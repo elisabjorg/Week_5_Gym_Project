@@ -23,6 +23,13 @@ class Member
     @id = results.first()['id'].to_i
   end
 
+  def lesson()
+    sql = "SELECT * FROM lessons where id = $1"
+    values = [@lesson_id]
+    results = SqlRunner.run(sql, values)
+    return Lesson.new(results.first)
+  end
+
   def self.all()
     sql = "SELECT * FROM members"
     results = SqlRunner.run( sql )
