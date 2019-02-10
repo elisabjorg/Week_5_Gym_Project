@@ -4,7 +4,7 @@ require_relative( "../models/booking.rb" )
 require("pry-byebug")
 
 # Booking.delete_all()
-# Member.delete_all()
+Member.delete_all()
 # Lesson.delete_all()
 
   member_1 = Member.new({
@@ -33,3 +33,24 @@ require("pry-byebug")
   })
 
   member_3.save()
+
+  lesson_1 = Lesson.new({
+    "title" => "Fitness Box",
+    "instructor" => "Lauren Hill",
+  })
+
+  lesson_1.save()
+
+  lesson_2 = Lesson.new({
+    "title" => "Cycle",
+    "instructor" => "Jerry Seinfeld",
+  })
+
+  lesson_2.save()
+
+  lesson_3 = Lesson.new({
+    "title" => "Pilates",
+    "instructor" => "Julia Roberts",
+  })
+
+  lesson_3.save()
