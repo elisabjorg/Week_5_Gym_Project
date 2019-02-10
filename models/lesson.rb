@@ -10,4 +10,26 @@ class Lesson
     @instructor = details['instructor']
   end
 
-end 
+  def save()
+    sql = "INSERT INTO lessons
+          (title, instructor)
+          VALUES
+          ($1, $2)
+          RETURNING id"
+    values = [@title, @instructor]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM lessons"
+    results = SqlRunner.run( sql )
+    return results.map { |lesson| Lesson.new( lesson ) }
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM lessons"
+    SqlRunner.run( sql )
+  end
+
+end
