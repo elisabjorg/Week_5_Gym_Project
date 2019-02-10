@@ -42,7 +42,6 @@ class Lesson
     return Lesson.new( results.first )
   end
 
-
   def self.delete_all()
     sql = "DELETE FROM lessons"
     SqlRunner.run( sql )
