@@ -10,4 +10,26 @@ class Booking
     @lesson_id = details['lesson_id'].to_i
   end
 
+  def save()
+    sql = "INSERT INTO bookings
+          (member_id, lesson_id)
+          VALUES
+          ($1, $2)
+          RETURNING id"
+    values = [@member_id, @lesson_id]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM bookings"
+    results = SqlRunner.run( sql )
+    return results.map { |booking| Booking.new( booking ) }
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM bookings"
+    SqlRunner.run( sql )
+  end
+
 end
