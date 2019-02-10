@@ -21,6 +21,20 @@ class Booking
     @id = results.first()['id'].to_i
   end
 
+  def member()
+    sql = "SELECT * FROM members where id = $1"
+    values = [@member_id]
+    results = SqlRunner.run(sql, values)
+    return Member.new(results.first)
+  end
+
+  def lesson()
+    sql = "SELECT * FROM lessons where id = $1"
+    values = [@lesson_id]
+    results = SqlRunner.run(sql, values)
+    return Lesson.new(results.first)
+  end
+
   def self.all()
     sql = "SELECT * FROM bookings"
     results = SqlRunner.run( sql )
