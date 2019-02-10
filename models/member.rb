@@ -12,4 +12,27 @@ class Member
     @email = details['email']
   end
 
+  def save()
+    sql = "INSERT INTO members
+          (first_name, last_name, address, email)
+          VALUES
+          ($1, $2, $3, $4)
+          RETURNING id"
+    values = [@first_name, @last_name, @address, @email]
+    results = SqlRunner.run(sql, values)
+    @id = results.first()['id'].to_i
+  end
+
+  def self.all()
+    sql = "SELECT * FROM members"
+    results = SqlRunner.run( sql )
+    return results.map { |member| Member.new( member ) }
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM members"
+    SqlRunner.run( sql )
+  end
+
+
 end
