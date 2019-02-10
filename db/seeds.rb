@@ -5,7 +5,7 @@ require("pry-byebug")
 
 # Booking.delete_all()
 Member.delete_all()
-# Lesson.delete_all()
+Lesson.delete_all()
 
   member_1 = Member.new({
     "first_name" => "Sara",
@@ -54,3 +54,24 @@ Member.delete_all()
   })
 
   lesson_3.save()
+
+  booking_1 = Booking.new({
+    "member_id" => member_1.id,
+    "lesson_id" => lesson_1.id
+    })
+
+  booking_1.save()
+
+  booking_2 = Booking.new({
+    "member_id" => member_2.id,
+    "lesson_id" => lesson_2.id
+    })
+
+  booking_2.save()
+
+  booking_3 = Booking.new({
+    "member_id" => member_3.id,
+    "lesson_id" => lesson_3.id
+    })
+
+  booking_3.save()
