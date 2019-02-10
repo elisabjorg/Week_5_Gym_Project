@@ -34,6 +34,15 @@ class Lesson
     return results.map { |lesson| Lesson.new( lesson ) }
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM lessons
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Lesson.new( results.first )
+  end
+
+
   def self.delete_all()
     sql = "DELETE FROM lessons"
     SqlRunner.run( sql )
