@@ -1,10 +1,11 @@
 <h1>All Bookings</h1>
 
 
-<ul>
-  <% for booking in @bookings %>
-  <li>
-    <p> <%= booking.member.id %> <%= booking.lesson.id%></p>
-  </li>
-  <% end %>
-</ul>
+<% for booking in @bookings %>
+<tr>
+  <td><a href="/bookings/<%= booking.id %>"><%= lesson.title %></a></td>
+  <td>|</td>
+  <td><%= member.full_name %></td>
+</tr>
+<% end %>
+</table>
