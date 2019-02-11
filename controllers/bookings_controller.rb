@@ -13,12 +13,12 @@ get '/bookings' do
   erb ( :"bookings/index")
 end
 
-# get '/bookings/new' do
-#   @members = Member.all
-#   @lessons = Lesson.all
-#   erb ( :"bookings/new")
-# end
-#
+get '/bookings/new' do
+  @members = Member.all
+  @lessons = Lesson.all
+  erb ( :"bookings/new")
+end
+
 # post '/bookings' do
 #   booking = Booking.new(params)
 #   booking.save
