@@ -19,12 +19,12 @@ get '/bookings/new' do
   erb ( :"bookings/new")
 end
 
-# post '/bookings' do
-#   booking = Booking.new(params)
-#   booking.save
-#   redirect to("/bookings")
-# end
-#
+post '/bookings' do
+  booking = Booking.new(params)
+  booking.save
+  redirect to("/bookings")
+end
+
 # post '/bookings/:id/delete' do
 #   Booking.destroy(params[:id])
 #   redirect to("/bookings")
