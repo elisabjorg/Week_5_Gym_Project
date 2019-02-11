@@ -25,7 +25,7 @@ post '/bookings' do
   redirect to("/bookings")
 end
 
-# post '/bookings/:id/delete' do
-#   Booking.destroy(params[:id])
-#   redirect to("/bookings")
-# end
+post '/bookings/:id/delete' do
+  Booking.destroy(params[:id])
+  redirect to("/bookings")
+end
