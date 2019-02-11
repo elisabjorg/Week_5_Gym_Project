@@ -15,6 +15,6 @@ get '/lessons/:id' do
   erb (:"lessons/show")
 end
 
-# get '/lesson/new' do
-#   erb (:"lessons/new")
-# end
+get '/lesson/new' do
+  erb (:"lessons/new")
+end
