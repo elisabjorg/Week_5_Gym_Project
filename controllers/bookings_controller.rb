@@ -1,6 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require( 'pry-byebug' )
+# require( 'pry' )
 require_relative( '../models/booking.rb' )
 require_relative( '../models/member.rb' )
 require_relative( '../models/lesson.rb' )
@@ -29,3 +29,6 @@ post '/bookings/:id/delete' do
   Booking.destroy(params[:id])
   redirect to("/bookings")
 end
+
+# binding.pry
+# nil

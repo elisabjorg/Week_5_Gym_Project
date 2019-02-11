@@ -1,6 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require( 'pry-byebug' )
+# require( 'pry' )
 require_relative( '../models/lesson.rb' )
 
 also_reload( '../models/*' )
@@ -24,3 +24,6 @@ end
 #   @lesson.save
 #   erb (:"lessons/new")
 # end
+
+# binding.pry
+# nil

@@ -1,11 +1,11 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require( 'pry-byebug' )
+# require( 'pry' )
 require_relative( '../models/member.rb' )
 
 also_reload( '../models/*' )
 
-get '/member' do
+get '/members' do
   @members = Member.all()
   erb (:"members/index")
 end
@@ -18,3 +18,7 @@ end
 get '/members/new' do
   erb (:"members/new")
 end
+
+#
+# binding.pry
+# nil

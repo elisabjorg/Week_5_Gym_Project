@@ -30,6 +30,10 @@ class Member
     return Lesson.new(results.first)
   end
 
+  def full_name()
+    return "#{@first_name} #{@second_name}"
+  end
+
   def self.all()
     sql = "SELECT * FROM members"
     results = SqlRunner.run( sql )
