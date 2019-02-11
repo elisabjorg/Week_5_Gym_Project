@@ -24,7 +24,8 @@ class Member
   end
 
   def lesson()
-    sql = "SELECT l.* FROM lessons l INNER JOIN bookings b ON b.member_id = l.id WHERE b.member_id = $1;"
+    sql = "SELECT l.* FROM lessons l INNER JOIN bookings
+    b ON b.member_id = l.id WHERE b.member_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)
     return results.map {|lesson| Lesson.new(lesson)}
