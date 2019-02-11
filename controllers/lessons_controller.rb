@@ -15,6 +15,12 @@ get '/lessons/:id' do
   erb (:"lessons/show")
 end
 
-get '/lesson/new' do
+get '/lessons/new' do
   erb (:"lessons/new")
 end
+
+# post '/lessons' do
+#   @lesson = Lesson.new(params)
+#   @lesson.save
+#   erb (:"lessons/new")
+# end
