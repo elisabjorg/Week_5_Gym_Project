@@ -27,7 +27,7 @@ class Member
     sql = "SELECT * FROM lessons where id = $1"
     values = [@lesson_id]
     results = SqlRunner.run(sql, values)
-    return Lesson.new(results.first)
+    return lessons.map {|lesson| Lesson.new(lesson)}
   end
 
   def full_name()

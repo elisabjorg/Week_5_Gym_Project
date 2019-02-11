@@ -25,7 +25,7 @@ class Lesson
     sql = "SELECT * FROM members where id = $1"
     values = [@member_id]
     results = SqlRunner.run(sql, values)
-    return Member.new(results.first)
+    return members.map {|member| Member.new(member)}
   end
 
   def self.all()

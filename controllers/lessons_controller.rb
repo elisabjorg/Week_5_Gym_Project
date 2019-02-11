@@ -19,11 +19,11 @@ get '/lessons/new' do
   erb (:"lessons/new")
 end
 
-# post '/lessons' do
-#   @lesson = Lesson.new(params)
-#   @lesson.save
-#   erb (:"lessons/new")
-# end
+post '/lessons' do
+  @lesson = Lesson.new(params)
+  @lesson.save
+  erb (:"lessons/new")
+end
 
 # binding.pry
 # nil
