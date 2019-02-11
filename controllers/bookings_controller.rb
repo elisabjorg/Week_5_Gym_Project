@@ -1,18 +1,18 @@
-# require( 'sinatra' )
-# require( 'sinatra/contrib/all' )
-# require( 'pry-byebug' )
-# require_relative( '../models/booking.rb' )
-# require_relative( '../models/member.rb' )
-# require_relative( '../models/lesson.rb' )
-#
-# also_reload( '../models/*' )
-#
-# get '/bookings' do
-#   @members = Member.all
-#   @lessons = Lesson.all
-#   erb ( :"bookings/index")
-# end
-#
+require( 'sinatra' )
+require( 'sinatra/contrib/all' )
+require( 'pry-byebug' )
+require_relative( '../models/booking.rb' )
+require_relative( '../models/member.rb' )
+require_relative( '../models/lesson.rb' )
+
+also_reload( '../models/*' )
+
+get '/bookings' do
+  @members = Member.all
+  @lessons = Lesson.all
+  erb ( :"bookings/index")
+end
+
 # get '/bookings/new' do
 #   @members = Member.all
 #   @lessons = Lesson.all
