@@ -19,6 +19,12 @@ get '/members/new' do
   erb (:"members/new")
 end
 
+post '/members' do
+  @member = Member.new(params)
+  @member.save
+  erb (:"members/new")
+end
+
 #
 # binding.pry
 # nil
