@@ -15,6 +15,6 @@ get '/members/:id' do
   erb (:"members/show")
 end
 
-# get '/members/new' do
-#   erb (:"members/new")
-# end
+get '/members/new' do
+  erb (:"members/new")
+end
