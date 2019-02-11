@@ -1,1 +1,16 @@
 <h1>Lessons</h1>
+
+<table>
+  <tr>
+    <th>Lesson name</th>
+    <th></th>
+    <th>Instructor</th>
+  </tr>
+  <% for lesson in @lessons %>
+  <tr>
+    <td><a href="/lessons/<%= lesson.id %>"><%= lesson.title %></a></td>
+    <td>|</td>
+    <td><%= lesson.instructor %></td>
+  </tr>
+  <% end %>
+</table>
