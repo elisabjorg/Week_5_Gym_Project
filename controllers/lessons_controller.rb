@@ -40,7 +40,7 @@ end
 post '/lessons/:id' do
   lesson = Lesson.new(params)
   lesson.update()
-  redirect('/lessons/' + params['id'].to_s)
+  redirect("/lessons")
 end
 
 post '/lessons/:id/delete' do
