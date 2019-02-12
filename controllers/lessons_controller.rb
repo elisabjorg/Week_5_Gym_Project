@@ -14,15 +14,33 @@ get '/lessons/new' do
   erb (:"lessons/new")
 end
 
+post '/lessons' do
+  lesson = Lesson.new(params)
+  lesson.save
+  redirect('/lessons')
+end
+
 get '/lessons/:id' do
   @lesson = Lesson.find(params['id'].to_i)
   erb (:"lessons/show")
 end
 
-post '/lessons' do
-  @lesson = Lesson.new(params)
-  @lesson.save
-  erb (:"lessons/new")
+get '/lessons/:id/edit' do
+  @lesson = Lesson.find(params['id'])
+  erb(:"lessons/edit")
+end
+
+# post '/lessons' do
+#   lesson = Lesson.new(params)
+#   lesson.save
+#   erb (:"lessons/new")
+# end
+
+
+post '/lessons/:id' do
+  lesson = Lesson.new(params)
+  lesson.update()
+  redirect('/lessons/' + params['id'].to_s)
 end
 
 # binding.pry
