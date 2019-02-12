@@ -10,7 +10,7 @@ Lesson.delete_all()
   member_1 = Member.new({
     "first_name" => "Sara",
     "last_name" => "Larsen",
-    "address" => "George Street",
+    "address" => "22 George Street",
     "email" => "sara@gmail.com"
     })
 
@@ -19,7 +19,7 @@ Lesson.delete_all()
   member_2 = Member.new({
     "first_name" => "George",
     "last_name" => "Clooney",
-    "address" => "Royal Mile",
+    "address" => "15 Royal Mile",
     "email" => "clooneymachine@gmail.com"
     })
 
@@ -28,7 +28,7 @@ Lesson.delete_all()
   member_3 = Member.new({
     "first_name" => "Brad",
     "last_name" => "Pitt",
-    "address" => "Princess Street",
+    "address" => "3 Princess Street",
     "email" => "sara@gmail.com"
   })
 
@@ -37,7 +37,7 @@ Lesson.delete_all()
   member_4 = Member.new({
     "first_name" => "Jennifer",
     "last_name" => "Aniston",
-    "address" => "Princess Garden",
+    "address" => "101 Princess Garden",
     "email" => "jennifer@gmail.com"
   })
 
