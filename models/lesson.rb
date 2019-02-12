@@ -21,13 +21,23 @@ class Lesson
     @id = results.first()['id'].to_i
   end
 
-  def member()
-    sql = "SELECT m.* FROM members m INNER JOIN bookings b
-    ON b.member_id = m.id WHERE b.lesson_id = $1;"
-    values = [@id]
-    results = SqlRunner.run(sql, values)
-    return results.map {|member| Member.new(member)}
-  end
+  # def member()
+  #   sql = "SELECT m.* FROM members m INNER JOIN bookings b
+  #   ON b.member_id = m.id WHERE b.lesson_id = $1;"
+  #   values = [@id]
+  #   results = SqlRunner.run(sql, values)
+  #   return results.map {|member| Member.new(member)}
+  # end
+
+  def members()
+  sql = 'SELECT members.* FROM members
+  INNER JOIN bookings
+  ON members.id = bookings.member_id
+  WHERE lesson_id = $1'
+  values = [@id]
+  result = SqlRunner.run(sql, values)
+  return result.map{|member| Member.new(member)}
+end
 
   def self.all()
     sql = "SELECT * FROM lessons"
