@@ -65,9 +65,8 @@ end
   end
 
   def self.find( id )
-    sql = "SELECT * FROM members
-    WHERE id = $1"
-    values = [id]
+    sql = "SELECT * FROM members WHERE id = $1"
+    values = [@id]
     results = SqlRunner.run( sql, values )
     return Member.new( results.first )
   end
