@@ -24,6 +24,16 @@ post '/members' do
   erb (:"members/new")
 end
 
+post '/members/:id' do
+  Member.new(params).update
+  redirect to "/members"
+end
+
+post '/members/:id/delete' do
+  member = Member.find(params['id'].to_i)
+  member.delete
+  redirect to "/members"
+end
 #
 # binding.pry
 # nil
