@@ -18,16 +18,16 @@ get '/bookings/new' do
   erb ( :"bookings/new")
 end
 
-get '/bookings/:id' do
-  @lesson = Lesson.find(params['id'].to_i)
-  @member = Member.find(params['id'].to_i)
-  erb (:"bookings/show")
-end
-
 post '/bookings' do
   booking = Booking.new(params)
   booking.save
   redirect to("/bookings")
+end
+
+get '/bookings/:id' do
+  @lesson = Lesson.find(params['id'].to_i)
+  @member = Member.find(params['id'].to_i)
+  erb (:"bookings/show")
 end
 
 post '/bookings/:id/delete' do

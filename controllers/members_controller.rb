@@ -17,7 +17,7 @@ end
 post '/members' do
   member = Member.new(params)
   member.save
-  redirect('/member')
+  redirect('/members')
 end
 
 get '/members/:id' do
@@ -29,11 +29,6 @@ get '/members/:id/edit' do
   @member = Member.find(params['id'].to_i)
   erb (:"members/edit")
 end
-
-# post '/members' do
-#   Member.new(params).save
-#   erb (:"members/new")
-# end
 
 post '/members/:id' do
   member = Member.new(params)

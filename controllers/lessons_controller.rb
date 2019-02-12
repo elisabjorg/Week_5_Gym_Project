@@ -30,13 +30,6 @@ get '/lessons/:id/edit' do
   erb(:"lessons/edit")
 end
 
-# post '/lessons' do
-#   lesson = Lesson.new(params)
-#   lesson.save
-#   erb (:"lessons/new")
-# end
-
-
 post '/lessons/:id' do
   lesson = Lesson.new(params)
   lesson.update()
