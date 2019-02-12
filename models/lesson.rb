@@ -30,14 +30,21 @@ class Lesson
   # end
 
   def members()
-  sql = 'SELECT members.* FROM members
-  INNER JOIN bookings
-  ON members.id = bookings.member_id
-  WHERE lesson_id = $1'
-  values = [@id]
-  result = SqlRunner.run(sql, values)
-  return result.map{|member| Member.new(member)}
-end
+    sql = 'SELECT members.* FROM members
+    INNER JOIN bookings
+    ON members.id = bookings.member_id
+    WHERE lesson_id = $1'
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    return result.map{|member| Member.new(member)}
+  end
+
+  def update()
+    sql = "UPDATE lessons SET (title, instructor) = ($1, $2) WHERE id = $3"
+    values = [@title, @instructor, @id]
+    SqlRunner.run(sql, values)
+  end
+
 
   def self.all()
     sql = "SELECT * FROM lessons"
