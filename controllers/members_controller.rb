@@ -20,8 +20,7 @@ get '/members/new' do
 end
 
 post '/members' do
-  @member = Member.new(params)
-  @member.save
+  Member.new(params).save
   erb (:"members/new")
 end
 

@@ -46,17 +46,17 @@ end
   end
 
   def update ()
-  sql = 'UPDATE members SET(first_name, last_name, address, email)
-  = ($1, $2, $3, $4) WHERE id = $5'
-  values = [@first_name, @last_name, @address, @email, @id]
-  SqlRunner.run(sql, values)
-end
+    sql = 'UPDATE members SET(first_name, last_name, address, email)
+    = ($1, $2, $3, $4) WHERE id = $5'
+    values = [@first_name, @last_name, @address, @email, @id]
+    SqlRunner.run(sql, values)
+  end
 
   def delete ()
-  sql = 'DELETE FROM members WHERE id = $1'
-  values = [@id]
-  SqlRunner.run(sql, values)
-end
+    sql = 'DELETE FROM members WHERE id = $1'
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 
   def self.all()
     sql = "SELECT * FROM members"

@@ -51,7 +51,6 @@ class Lesson
     SqlRunner.run(sql, values)
   end
 
-
   def self.all()
     sql = "SELECT * FROM lessons"
     results = SqlRunner.run( sql )
