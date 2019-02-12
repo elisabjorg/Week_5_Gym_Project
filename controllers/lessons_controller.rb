@@ -10,13 +10,13 @@ get '/lessons' do
   erb (:"lessons/index")
 end
 
+get '/lessons/new' do
+  erb (:"lessons/new")
+end
+
 get '/lessons/:id' do
   @lesson = Lesson.find(params['id'].to_i)
   erb (:"lessons/show")
-end
-
-get '/lessons/new' do
-  erb (:"lessons/new")
 end
 
 post '/lessons' do
