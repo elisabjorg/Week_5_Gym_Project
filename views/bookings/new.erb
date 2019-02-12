@@ -1,0 +1,23 @@
+<h2>Add new booking</h2>
+<form action="/bookings" method="POST">
+  <label>
+  Select a member:
+    <select name="member_id">
+      <% for member in @members %>
+      <option value="<%= member.id %>"><%= member.full_name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+  Select a course:
+    <select name="lesson_id">
+      <% for lesson in @lessons %>
+      <option value="<%= lesson.id %>"><%= lesson.title %></option>
+      <% end %>
+    </select>
+  </label>
+
+
+
+  

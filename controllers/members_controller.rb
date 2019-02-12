@@ -19,6 +19,11 @@ get '/members/new' do
   erb (:"members/new")
 end
 
+get '/members/:id/edit' do
+  @member = Member.find(params['id'].to_i)
+  erb (:"members/edit")
+end
+
 post '/members' do
   Member.new(params).save
   erb (:"members/new")

@@ -31,7 +31,7 @@ class Member
   #   return results.map {|lesson| Lesson.new(lesson)}
   # end
 
-  def lesson()
+  def lessons()
   sql = 'SELECT lessons.* FROM lessons
   INNER JOIN bookings
   ON lessons.id = bookings.lesson_id
