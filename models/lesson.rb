@@ -60,7 +60,7 @@ class Lesson
   def self.find( id )
     sql = "SELECT * FROM lessons
     WHERE id = $1"
-    values = [@id]
+    values = [id]
     results = SqlRunner.run( sql, values )
     return Lesson.new( results.first )
   end
