@@ -1,0 +1,20 @@
+<h1><%= @lesson.title %></h1>
+
+
+<h3>Members booked in course:</h3>
+
+<ul>
+  <% @lesson.members.each do |member| %>
+  <li><%= member.full_name %></li>
+  <% end %>
+</ul>
+
+<h1><%= @member.full_name %></h1>
+
+<h3> has signed up for:</h3>
+
+<ul>
+  <% @member.lessons.each do |lesson| %>
+    <li> <%=lesson.title%> </li>
+  <% end %>
+</ul>
