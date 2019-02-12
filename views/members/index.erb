@@ -7,6 +7,9 @@
     <th>Address</th>
     <th></th>
     <th>Email</th>
+    <th>Edit information</th>
+    <th></th>
+    <th>Remove</th>
   </tr>
   <% for member in @members %>
   <tr>
@@ -15,6 +18,8 @@
     <td><%= member.address %></td>
     <td>|</td>
     <td><%= member.email %></td>
+    <td>|</td>
+    <td><a href="/members/<%= member.id %>/edit">Edit</a></td>
   </tr>
   <% end %>
 </table>

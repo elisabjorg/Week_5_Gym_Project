@@ -43,5 +43,11 @@ post '/lessons/:id' do
   redirect('/lessons/' + params['id'].to_s)
 end
 
+post '/lessons/:id/delete' do
+  lesson = Lesson.find(params['id'].to_i)
+  lesson.delete
+  redirect to "/lessons"
+end
+
 # binding.pry
 # nil

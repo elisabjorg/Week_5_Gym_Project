@@ -14,6 +14,12 @@ get '/members/new' do
   erb (:"members/new")
 end
 
+post '/members' do
+  member = Member.new(params)
+  member.save
+  redirect('/member')
+end
+
 get '/members/:id' do
   @member = Member.find(params['id'].to_i)
   erb (:"members/show")
@@ -24,14 +30,15 @@ get '/members/:id/edit' do
   erb (:"members/edit")
 end
 
-post '/members' do
-  Member.new(params).save
-  erb (:"members/new")
-end
+# post '/members' do
+#   Member.new(params).save
+#   erb (:"members/new")
+# end
 
 post '/members/:id' do
-  Member.new(params).update
-  redirect to "/members"
+  member = Member.new(params)
+  member.update()
+  redirect('/members/' + params['id'].to_s)
 end
 
 post '/members/:id/delete' do
