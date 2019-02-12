@@ -8,8 +8,7 @@ require_relative( '../models/lesson.rb' )
 also_reload( '../models/*' )
 
 get '/bookings' do
-  @members = Member.all
-  @lessons = Lesson.all
+  @bookings = Booking.all
   erb ( :"bookings/index")
 end
 
@@ -19,16 +18,16 @@ get '/bookings/new' do
   erb ( :"bookings/new")
 end
 
-post '/bookings' do
-  booking = Booking.new(params)
-  booking.save
-  redirect to("/bookings")
-end
-
-post '/bookings/:id/delete' do
-  Booking.destroy(params[:id])
-  redirect to("/bookings")
-end
+# post '/bookings' do
+#   booking = Booking.new(params)
+#   booking.save
+#   redirect to("/bookings")
+# end
+#
+# post '/bookings/:id/delete' do
+#   Booking.destroy(params[:id])
+#   redirect to("/bookings")
+# end
 
 # binding.pry
 # nil

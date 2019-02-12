@@ -15,15 +15,15 @@ get '/lessons/:id' do
   erb (:"lessons/show")
 end
 
-get '/lessons/new' do
-  erb (:"lessons/new")
-end
-
-post '/lessons' do
-  @lesson = Lesson.new(params)
-  @lesson.save
-  erb (:"lessons/new")
-end
+# get '/lessons/new' do
+#   erb (:"lessons/new")
+# end
+#
+# post '/lessons' do
+#   @lesson = Lesson.new(params)
+#   @lesson.save
+#   erb (:"lessons/new")
+# end
 
 # binding.pry
 # nil

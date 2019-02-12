@@ -8,9 +8,9 @@
     </tr>
     <% for booking in @bookings %>
     <tr>
-      <td><a href="/bookings/<%= booking.id %>"><%= booking.lesson.id %></a></td>
+      <td><a href="/bookings/<%= booking.id %>"><%= booking.lesson.title %></a></td>
       <td>|</td>
-      <td><%= booking.member.id%></td>
+      <td><a href="/bookings/<%= booking.id %>"><%= booking.member.full_name %></a></td>
     </tr>
     <% end %>
     </table>

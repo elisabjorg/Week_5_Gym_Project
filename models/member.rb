@@ -32,7 +32,7 @@ class Member
   end
 
   def full_name()
-    return "#{@first_name} #{@second_name}"
+    return "#{@first_name} #{@last_name}"
   end
 
   def self.all()
