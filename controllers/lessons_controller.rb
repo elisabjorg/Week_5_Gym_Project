@@ -26,7 +26,7 @@ get '/lessons/:id' do
 end
 
 get '/lessons/:id/edit' do
-  @lesson = Lesson.find(params['id'])
+  @lesson = Lesson.find(params['id'].to_i)
   erb(:"lessons/edit")
 end
 

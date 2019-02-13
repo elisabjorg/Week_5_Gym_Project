@@ -14,11 +14,72 @@ li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration
+  padding: 10px 100px;
+  text-decoration: none;
 }
 
 body {
-  background: black url('/images/GetFitLogo2.png');
-  background-size: 100%;
+  background: white url('/images/GetFitLogo2.png');
+  background-size: center;
 }
+
+input[type="submit"] {
+  font-family: arial;
+  background-color: #E0E1DD;
+  border: none;
+  color: black;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
+
+table {
+  table-layout: fixed;
+  width: 60%;
+  border-collapse: collapse;
+  border: 3px solid black;
+}
+
+th, td {
+  padding: 10px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ffa500;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+tbody tr {
+  background-image: url(noise.png);
+}
+
+table {
+  background-color: #ff33cc;
+}
+
+thead {
+  color: white;
+}
+
+thead {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* body img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+} */

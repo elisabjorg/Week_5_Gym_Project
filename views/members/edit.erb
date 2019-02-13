@@ -1,6 +1,6 @@
 <h2>Edit member <%= @member.full_name %></h2>
 
-<form method="post" action="/members/" <%=@member.id%>>
+<form method="post" action="/members/ <%=@member.id%>">
   <div>
     <label for="first_name">First name:</label>
     <input type="text" name="first_name" id="first_name" value="<%= @member.first_name %>"/>

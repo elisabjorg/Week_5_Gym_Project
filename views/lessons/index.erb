@@ -1,6 +1,6 @@
-<h1>All Courses</h1>
-<hr>
+<h1>Courses</h1>
 <table>
+  <thead>
   <tr>
     <th>Course name</th>
     <th></th>
@@ -8,15 +8,15 @@
     <th></th>
     <th>Edit information</th>
   </tr>
+  </thead>
   <% for lesson in @lessons %>
   <tr>
     <td><a href="/lessons/<%= lesson.id %>"><%= lesson.title %></a></td>
-    <td>|</td>
+    <td></td>
     <td><%= lesson.instructor %></td>
-    <td>|</td>
+    <td></td>
     <td><a href="/lessons/<%= lesson.id %>/edit">Edit</a></td>
   </tr>
   <% end %>
 </table>
-<hr>
 <form action="/lessons/new"><input type="submit" value="Add a new course"></form>

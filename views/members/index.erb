@@ -1,6 +1,6 @@
-<h1>All the members</h1>
-<hr>
+<h1>Members</h1>
 <table>
+  <thead>
   <tr>
     <th>Full name</th>
     <th></th>
@@ -10,17 +10,17 @@
     <th></th>
     <th>Edit information</th>
   </tr>
+  </thead>
   <% for member in @members %>
   <tr>
     <td><a href="/members/<%= member.id %>"><%= member.full_name %></a></td>
-    <td>|</td>
+    <td></td>
     <td><%= member.address %></td>
-    <td>|</td>
+    <td></td>
     <td><%= member.email %></td>
-    <td>|</td>
+    <td></td>
     <td><a href="/members/<%= member.id %>/edit">Edit</a></td>
   </tr>
   <% end %>
 </table>
-<hr>
 <form action="/members/new"><input type="submit" value="Add a member"></form>

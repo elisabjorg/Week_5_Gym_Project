@@ -1,18 +1,18 @@
-<h1>All Bookings</h1>
-<hr>
+<h1>Bookings</h1>
   <table>
+    <thead>
     <tr>
       <th>Course</th>
       <th></th>
       <th>Member</th>
     </tr>
+    </thead>
     <% for booking in @bookings %>
     <tr>
       <td><a href="/bookings/<%= booking.id %>"><%= booking.lesson.title %></a></td>
-      <td>|</td>
+      <td></td>
       <td><a href="/bookings/<%= booking.id %>"><%= booking.member.full_name %></a></td>
     </tr>
     <% end %>
     </table>
     <form action="/bookings/new"><input type="submit" value="Add a new booking"></form>
-<hr>
