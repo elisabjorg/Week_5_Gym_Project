@@ -35,12 +35,6 @@ class Booking
     return Lesson.new(results.first)
   end
 
-  def delete ()
-    sql = 'DELETE FROM bookings WHERE id = $1'
-    values = [@id]
-    SqlRunner.run(sql, values)
-  end
-
   def self.all()
     sql = "SELECT * FROM bookings"
     results = SqlRunner.run( sql )
@@ -61,10 +55,10 @@ class Booking
   end
 
   def self.delete(id)
-  sql = "DELETE FROM bookings
-  WHERE id = $1"
-  values = [@id]
-  SqlRunner.run( sql, values )
-end
+    sql = "DELETE FROM bookings
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
 
 end

@@ -54,7 +54,7 @@ table {
   table-layout: fixed;
   width: 60%;
   border-collapse: collapse;
-  border: 3px solid black;
+  border: 3px solid white;
 }
 
 th, td {
@@ -83,7 +83,7 @@ table {
 
 
 thead {
-  background-color: #ffffff;
+  background-color: #ffa500;
   color: black;
   text-transform: uppercase;
   padding: 5px;
