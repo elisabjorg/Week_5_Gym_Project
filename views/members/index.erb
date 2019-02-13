@@ -8,7 +8,7 @@
     <th></th>
     <th>Email</th>
     <th></th>
-    <th>Edit information</th>
+    <th>Edit</th>
   </tr>
   </thead>
   <% for member in @members %>
@@ -19,7 +19,7 @@
     <td></td>
     <td><%= member.email %></td>
     <td></td>
-    <td><a href="/members/<%= member.id %>/edit">Edit</a></td>
+    <td><a href="/members/<%= member.id %>/edit">Update / Delete</a></td>
   </tr>
   <% end %>
 </table>

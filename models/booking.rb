@@ -60,4 +60,11 @@ class Booking
     SqlRunner.run( sql )
   end
 
+  def self.delete(id)
+  sql = "DELETE FROM bookings
+  WHERE id = $1"
+  values = [@id]
+  SqlRunner.run( sql, values )
+end
+
 end

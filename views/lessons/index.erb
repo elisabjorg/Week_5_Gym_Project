@@ -6,7 +6,7 @@
     <th></th>
     <th>Instructor</th>
     <th></th>
-    <th>Edit information</th>
+    <th>Edit</th>
   </tr>
   </thead>
   <% for lesson in @lessons %>
@@ -15,7 +15,7 @@
     <td></td>
     <td><%= lesson.instructor %></td>
     <td></td>
-    <td><a href="/lessons/<%= lesson.id %>/edit">Edit</a></td>
+    <td><a href="/lessons/<%= lesson.id %>/edit">Update / Delete</a></td>
   </tr>
   <% end %>
 </table>

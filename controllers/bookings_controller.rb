@@ -31,7 +31,7 @@ get '/bookings/:id' do
 end
 
 post '/bookings/:id/delete' do
-  Booking.destroy(params[:id])
+  Booking.delete(params[:id])
   redirect to("/bookings")
 end
 

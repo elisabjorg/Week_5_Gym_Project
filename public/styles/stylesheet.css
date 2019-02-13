@@ -28,10 +28,8 @@ nav li a {
 }
 
 body {
-  background: white url('/images/GetFitLogo2.png');
-  background-size: center;
+  background-image: url('/images/GetFitlogo2.png');
   background-repeat: no-repeat;
-
 }
 
 input[type="submit"] {
@@ -78,6 +76,7 @@ tbody tr {
   text-align: center;
 }
 
+
 table {
   background-color: #ff33cc;
 }
@@ -107,6 +106,8 @@ select {
   box-sizing: border-box;
   border-radius: 2px;
 }
+
+
 
 /* body img {
   display: block;
