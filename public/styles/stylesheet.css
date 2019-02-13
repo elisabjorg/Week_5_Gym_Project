@@ -1,4 +1,13 @@
-ul {
+h1 {
+  font-family: arial;
+}
+
+h3 {
+  color: #ffa500;
+}
+
+
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -6,27 +15,29 @@ ul {
   background-color: #333;
 }
 
-li {
+nav li {
   float: left;
 }
 
-li a {
+nav li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 10px 100px;
+  padding: 10px 85px;
   text-decoration: none;
 }
 
 body {
   background: white url('/images/GetFitLogo2.png');
   background-size: center;
+  background-repeat: no-repeat;
+
 }
 
 input[type="submit"] {
   font-family: arial;
-  background-color: #E0E1DD;
-  border: none;
+  background-color: #ffa500;
+  border: black;
   color: black;
   padding: 5px 5px;
   text-align: center;
@@ -38,7 +49,7 @@ input[type="submit"] {
 a {
   text-decoration: none;
   color: black;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 table {
@@ -49,11 +60,12 @@ table {
 }
 
 th, td {
-  padding: 10px;
+  padding: 15px;
+  text-align: left;
 }
 
 tbody tr:nth-child(odd) {
-  background-color: #ffa500;
+  background-color: #E0E1dd;
 }
 
 tbody tr:nth-child(even) {
@@ -62,19 +74,38 @@ tbody tr:nth-child(even) {
 
 tbody tr {
   background-image: url(noise.png);
+  padding: 10px;
+  text-align: center;
 }
 
 table {
   background-color: #ff33cc;
 }
 
-thead {
-  color: white;
-}
 
 thead {
   background-color: #ffffff;
   color: black;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+input {
+  padding: 5px 5px;
+  margin: 4px 0;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+input[type=text]:focus {
+  border: 3px solid #333;
+}
+
+select {
+  padding: 8px 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 2px;
 }
 
 /* body img {
